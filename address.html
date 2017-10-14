@@ -51,7 +51,7 @@
           <ul>
             <li class="cur">地址确认</li>
             <li>查看订单</li>
-            <li>支付</li>
+            <li><a href="pay.html">支付</a></li>
             <li>订单确认</li>
           </ul>
         </div>
@@ -63,11 +63,11 @@
         <div class="addr-list-wrap">
           <div class="addr-list">
             <ul>
-              <li>
+              <li v-for="item in addressList">
                 <dl>
-                  <dt>JackBean</dt>
-                  <dd class="address">北京朝阳区朝阳公园</dd>
-                  <dd class="tel">13356576785</dd>
+                  <dt>{{item.userName}}</dt>
+                  <dd class="address">{{item.streetName}}</dd>
+                  <dd class="tel">{{item.tel}}</dd>
                 </dl>
                 <div class="addr-opration addr-edit">
                   <a href="javascript:;" class="addr-edit-btn">
@@ -79,10 +79,10 @@
                     <svg class="icon icon-del"><use xlink:href="#icon-del"></use></svg>
                   </a>
                 </div>
-                <div class="addr-opration addr-set-default">
-                  <a href="javascript:;" class="addr-set-default-btn" ><i>设为默认</i></a>
+                <div class="addr-opration addr-set-default" v-if="!item.isDefault">
+                  <a href="javascript:;" class="addr-set-default-btn"><i>设为默认</i></a>
                 </div>
-                <div class="addr-opration addr-default">默认地址</div>
+                <div class="addr-opration addr-default" v-if="item.isDefault">默认地址</div>
               </li>
 
               <li class="addr-new">

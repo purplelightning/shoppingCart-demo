@@ -5,19 +5,19 @@
     "list":[
       {
         "productId":"600100002115",
-        "productName":"黄鹤楼香烟",
-        "productPrice":19,
+        "productName":"外星人笔记本",
+        "productPrice":20999,
         "productQuantity":1,
-        "productImage":"static/img/goods-1.jpg",
+        "productImage":"static/img/alien.jpg",
         "parts":[
           {
             "partsId":"10001",
-            "partsName":"打火机",
+            "partsName":"GTX 1080Ti",
             "imgSrc":"static/img/part-1.jpg"
           },
           {
             "partsId":"10002",
-            "partsName":"软中华",
+            "partsName":"cherry机械键盘",
             "imgSrc":"static/img/part-1.jpg"
           }
         ]
