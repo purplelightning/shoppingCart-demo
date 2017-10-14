@@ -3,6 +3,8 @@ var vm = new Vue({
   data: {
     productList: [],
     totalMoney: 0,
+    checkAllFlag: false,
+
   },
   mounted: function () {//2.0使用,不使用ready
     this.$nextTick(function () {
@@ -32,7 +34,30 @@ var vm = new Vue({
       if (pro.productQuantity < 1) {
         pro.productQuantity = 1;
       }
-    }
+    },
+    selectedProduct: function (item) {
+      if (typeof item.checked == 'undefined') {
+        //1.全局注册
+        // Vue.set(item,'checked',true);
+        // 2.局部注册
+        this.$set(item, 'checked', true);
+      } else {
+        item.checked = !item.checked;
+      }
+    },
+
+    checkAll: function (flag) {
+      this.checkAllFlag = flag;
+      var _this=this;
+      this.productList.forEach(function (item,index) {
+          if (typeof item.checked == 'undefined') {
+            _this.$set(item, 'checked', _this.checkAllFlag);
+          } else {
+            item.checked = _this.checkAllFlag;
+          }
+        }
+      );
+    },
   },
   //局部过滤器
   filters: {
