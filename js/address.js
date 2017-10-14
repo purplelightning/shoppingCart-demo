@@ -37,7 +37,6 @@ new Vue({
         this.showSize = 3;
       }
       this.count++;
-      this.getAddressList();
     },
     //设置默认地址
     setDefault: function (addressId) {

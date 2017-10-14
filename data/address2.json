@@ -9,14 +9,6 @@
       "postCode":"100001",
       "tel":"12345678901",
       "isDefault":true
-    },
-    {
-      "addressId":"100002",
-      "userName":"youysong",
-      "streetName":"南京市玄武区玄武湖",
-      "postCode":"100001",
-      "tel":"12345678901",
-      "isDefault":false
     }
   ]
 }
