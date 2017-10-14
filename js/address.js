@@ -6,6 +6,7 @@ new Vue({
     count: 0,
     shippingMethod: 1,
     currentIndex: 0,
+    showAdrAlert:false,
   },
   mounted: function () {
     this.$nextTick(function () {
@@ -43,6 +44,15 @@ new Vue({
           address.isDefault = false;
         }
       })
+    },
+    //只有这里可以传item,所以要加这个函数,而不是click直接把标志置为真
+    delAdrConfirm:function (item) {
+      this.currentIndex=item;
+      this.showAdrAlert=true;
+    },
+    delAddress:function () {
+      this.addressList.splice(this.currentIndex,1);
+      this.showAdrAlert=false;
     }
   },
   computed: {
