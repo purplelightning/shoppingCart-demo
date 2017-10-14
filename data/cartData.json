@@ -14,6 +14,25 @@
             "partsId":"10001",
             "partsName":"打火机",
             "imgSrc":"static/img/part-1.jpg"
+          },
+          {
+            "partsId":"10002",
+            "partsName":"软中华",
+            "imgSrc":"static/img/part-1.jpg"
+          }
+        ]
+      },
+      {
+        "productId":"600100002122",
+        "productName":"Taylor",
+        "productPrice":3950,
+        "productQuantity":1,
+        "productImage":"static/img/guitar.jpg",
+        "parts":[
+          {
+            "partsId":"10001",
+            "partsName":"豪华琴盒",
+            "imgSrc":"static/img/guitarbox.jpg"
           }
         ]
       },
@@ -27,6 +46,11 @@
           {
             "partsId":"20001",
             "partsName":"吸管",
+            "imgSrc":"static/img/part-2.jpg"
+          },
+          {
+            "partsId":"20002",
+            "partsName":"王老吉",
             "imgSrc":"static/img/part-2.jpg"
           }
         ]
