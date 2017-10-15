@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>checkOrder</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/checkout.css" rel="stylesheet">
+  <link href="css/modal.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    h2 {
+      text-align: center;
+      color: red;
+    }
+    h3 {
+      text-align: center;
+      /*color: gainsboro;*/
+    }
+
+    body {
+      /*background: #4cf067;*/
+      text-align: center;
+    }
+
+    .order-wrap {
+      width:90%;
+      margin-left:5%;
+    }
+
+    .order-head {
+      background: #50d8f3;
+      padding: 10px;
+      font-size:22px;
+      color:white;
+      text-align: center;
+    }
+
+    .orderitem {
+      background: #98e0c2;
+      color: #ff5476;
+      font-size: 18px;
+      line-height:100px;
+      margin-bottom: 3px;
+      text-align: center;
+    }
+
+    .orderitem img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #myAddress{
+      text-align: left;
+      color:black;
+      padding:30px;
+      font-size:20px;
+      border: 2px solid silver;
+      border-radius:8px;
+      width:300px;
+      height:150px;
+      margin:auto;
+
+    }
+    .foo{
+      height:200px;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id="order">
+  <h2>订单信息</h2>
+  <div class="order-wrap">
+    <div class="order-head row">
+      <div class="col-xs-4">
+        <span>商品信息</span>
+      </div>
+      <div class="col-xs-4">
+        <span>总金额</span>
+      </div>
+      <div class="col-xs-4">
+        <span>商品数量</span>
+      </div>
+    </div>
+
+    <ul>
+      <li v-for="item in orderList">
+        <div class="orderitem row">
+          <div class="col-xs-2"><img v-bind:src="item.productImage"></div>
+          <div class="col-xs-2">{{item.productName}}</div>
+          <div class="col-xs-4">{{item.productQuantity * item.productPrice }}</div>
+          <div class="col-xs-4">{{item.productQuantity}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h3>收货地址</h3>
+  <div id="myAddress">
+    <div class="addr-street">地址:Winterfell</div>
+    <div class="addr-name">姓名:Bran Stark</div>
+    <div class="addr-tel">联系方式:234234112312</div>
+  </div>
+
+  <div class="foo"></div>
+</div>
+
+
+<script src="js/lib/vue.min.js"></script>
+<script src="js/lib/vue-resource.js"></script>
+<script src="js/checkOrder.js"></script>
+<script src="js/lib/bootstrap.js"></script>
+</body>
+
+</html>
