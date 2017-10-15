@@ -8,6 +8,7 @@ new Vue({
     currentIndex: 0,
     delAdrAlert:false,
     addAdrAlert:false,
+    editAdrAlert:false,
     newName:'',
     newAddr:'',
     newTel:'',
@@ -21,7 +22,7 @@ new Vue({
     //获取地址
     getAddressList: function () {
       var _this = this;
-      this.$http.get('data/address2.json').then(function (response) {
+      this.$http.get('data/address.json').then(function (response) {
         var res = response.data;
         if (res.status == '0') {
           _this.addressList = res.result;
@@ -53,10 +54,12 @@ new Vue({
       this.currentIndex=item;
       this.delAdrAlert=true;
     },
+    //删除地址
     delAddress:function () {
       this.addressList.splice(this.currentIndex,1);
       this.delAdrAlert=false;
     },
+    //增加地址
     addAddress:function () {
       var newItem={};
       newItem.addressId='';
@@ -67,6 +70,23 @@ new Vue({
       newItem.isDefault=false;
       this.addressList.push(newItem);
       this.addAdrAlert=false;
+
+      this.newName='';
+      this.newAddr='';
+      this.newTel='';
+    },
+
+    editAdrConfirm:function (item) {
+      this.currentIndex=this.addressList.indexOf(item);
+      this.editAdrAlert=true;
+    },
+    //编辑地址
+    editAddress:function () {
+      var curitem=this.addressList[this.currentIndex];
+      curitem.userName=this.newName;
+      curitem.streetName=this.newAddr;
+      curitem.tel=this.newTel;
+      this.editAdrAlert=false;
 
       this.newName='';
       this.newAddr='';
